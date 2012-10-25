@@ -2,6 +2,8 @@ package Nauka;
 
 public class liczbyPierwsze {
 
+	final static int MAX_LICZBA_PIERWSZA=50000;
+	
 	/**
 	 * @param args
 	 */
@@ -11,9 +13,10 @@ public class liczbyPierwsze {
 		Stoper mierzCzas = new Stoper();
 		Stoper mierzCzas1 = new Stoper();
 		mierzCzas.zeruj();
-		int i, j = 0, wynik, tabPierwszych[] = new int[100000];
+		
+		int i, j = 0, wynik, tabPierwszych[] = new int[MAX_LICZBA_PIERWSZA];
 		mierzCzas.start();
-		for (i = 0; i < 10000000; i++) {
+		for (i = 0; i < MAX_LICZBA_PIERWSZA; i++) {
 			if (i == 1) {
 				tabPierwszych[j] = i;
 				j++;
@@ -34,11 +37,11 @@ public class liczbyPierwsze {
 		}
 
 		mierzCzas.stop();
-		System.out.print("\nWstawianie poszczególnych liczb do tablicy - ");
+		System.out.print("Wstawianie poszczególnych liczb do tablicy - ");
 		mierzCzas.podajCzas();
 		mierzCzas1.zeruj();
-
 		mierzCzas1.start();
+		
 		System.out.print("Liczby pierwsze: ");
 		for (i = 1; i < tabPierwszych.length; i++) {
 			if (tabPierwszych[i] > 0) {
